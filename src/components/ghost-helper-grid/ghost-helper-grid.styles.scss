@@ -3,4 +3,27 @@
   grid-template-columns: 100px 1fr 1fr 1fr;
   grid-template-rows: 100px 1fr 1fr 1fr;
   border: 1px solid green;
+
+  // // select a column (when the grid has 4 across)
+  // :nth-child(4n-1) {
+  //   background-color: blue;
+  // }
+
+  // // select a row  (when the grid has 4 across)
+  // :nth-child(5) {
+  //   background-color: purple;
+  // }
+  // :nth-child(6) {
+  //   background-color: purple;
+  // }
+  // :nth-child(7) {
+  //   background-color: purple;
+  // }
+  // :nth-child(8) {
+  //   background-color: purple;
+  // }
+
+  .highlighted {
+    background-color: lightpink;
+  }
 }

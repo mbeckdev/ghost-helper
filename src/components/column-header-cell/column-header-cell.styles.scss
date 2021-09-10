@@ -1,0 +1,24 @@
+.column-header-cell {
+  border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  .title {
+    // transform: rotate(-90deg);
+    // transform-origin: 10px 00%;
+    // position: absolute;
+    // bottom: 0px;
+    // left: 0;
+
+    // transform-origin: bottom;
+    border: 1px solid green;
+    // float: left;
+
+    text-align: center;
+    // writing-mode: vertical-lr;
+    // text-orientation: sideways;
+
+    // transform: rotate(-90deg) translateX(-20px);
+  }
+}

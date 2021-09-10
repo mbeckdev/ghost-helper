@@ -2,9 +2,42 @@ import React from 'react';
 
 import './row-header-cell.styles.scss';
 
+let itWasClicked = false;
+
+function wasClicked(here) {
+  console.log('was clicked');
+  let dur = findChildIndex(here);
+  // itWasClicked = true;
+  console.log('findChildIndex = ' + dur);
+}
+
+function findChildIndex(node) {
+  console.log('findchildindex =');
+  console.log(node.target);
+
+  let clickedElement = node.target;
+
+  var index = 1; // nth-child starts with 1 = first child
+  // (You could argue that you should throw an exception here if the
+  // `node` passed in is not an element [e.g., is a text node etc.]
+  // or null.)
+
+  let aNode = clickedElement.parentElement;
+  while (aNode.previousSibling) {
+    aNode = aNode.previousSibling;
+    if (aNode && aNode.nodeType === 1) {
+      // 1 = element
+      ++index;
+    }
+  }
+  return index;
+}
+
 const RowHeaderCell = (props) => (
-  <div className="row-header-cell">
-    <div className="title">{props.title}</div>
+  <div className="row-header-cell" onClick={wasClicked}>
+    <div className={itWasClicked ? 'title highlighted' : 'title'}>
+      {props.title}
+    </div>
   </div>
 );
 
