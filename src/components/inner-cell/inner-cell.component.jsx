@@ -9,8 +9,7 @@ class InnerCell extends React.Component {
   render() {
     return (
       <div className="inner-cell">
-        <h1>Hi you</h1>
-        <h1>Hola tu</h1>
+        <h1>&#10006;</h1>
       </div>
     );
   }

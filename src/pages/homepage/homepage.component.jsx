@@ -6,10 +6,8 @@ import Header from '../../components/header/header.component';
 import GhostHelper from '../../components/ghost-helper/ghost-helper.component';
 
 const HomePage = () => (
-  <div>
+  <div className="homepage">
     <Header />
-    <div>It's the homepage!</div>
-    <p>asdf</p>
     <GhostHelper />
     {/* <InnerCell></InnerCell> */}
   </div>

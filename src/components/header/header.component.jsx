@@ -14,7 +14,7 @@ function Header() {
       }}
     >
       <div className="header-title">Ghost Helper 9000</div>
-      <div style={{ color: `${COLORS.dark}` }}>MMade with React</div>
+      <div style={{ color: `${COLORS.dark}` }}>Made with React</div>
     </header>
   );
 }
