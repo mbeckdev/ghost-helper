@@ -2,7 +2,8 @@ import React from 'react';
 
 import './row-header-cell.styles.scss';
 
-let itWasClicked = false;
+// let itWasClicked = false;
+let itWasClicked = true;
 
 function wasClicked(here) {
   console.log('was clicked');
@@ -34,11 +35,22 @@ function findChildIndex(node) {
 }
 
 const RowHeaderCell = (props) => (
-  <div className="row-header-cell" onClick={wasClicked}>
-    <div className={itWasClicked ? 'title highlighted' : 'title'}>
-      {props.title}
-    </div>
+  <div
+    className={
+      itWasClicked
+        ? `${props.title} highlighted row-header-cell`
+        : 'title row-header-cell'
+    }
+    onClick={wasClicked}
+  >
+    {props.title}
   </div>
 );
 
 export default RowHeaderCell;
+
+// /* <div className="row-header-cell" onClick={wasClicked}>
+//     <div className={itWasClicked ? 'title highlighted' : 'title'}>
+// {props.title}
+// </div>
+// </div> */
