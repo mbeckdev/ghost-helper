@@ -3,14 +3,7 @@ import React from 'react';
 import './row-header-cell.styles.scss';
 
 // let itWasClicked = false;
-let itWasClicked = true;
-
-function wasClicked(here) {
-  console.log('was clicked');
-  let dur = findChildIndex(here);
-  // itWasClicked = true;
-  console.log('findChildIndex = ' + dur);
-}
+// let itWasClicked = true;
 
 function findChildIndex(node) {
   console.log('findchildindex =');
@@ -34,18 +27,47 @@ function findChildIndex(node) {
   return index;
 }
 
-const RowHeaderCell = (props) => (
-  <div
-    className={
-      itWasClicked
-        ? `${props.title} highlighted row-header-cell`
-        : 'title row-header-cell'
+class RowHeaderCell extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      itWasClicked: false,
+    };
+  }
+
+  wasClicked = (here) => {
+    console.log('was clicked');
+    let dur = findChildIndex(here);
+    // itWasClicked = true;
+    console.log('findChildIndex = ' + dur);
+
+    if (this.state.itWasClicked) {
+      this.setState(
+        () => ({ itWasClicked: false }),
+        console.log('this.state.itWasClicked = ', this.state.itWasClicked)
+      );
+    } else {
+      this.setState({ itWasClicked: true });
     }
-    onClick={wasClicked}
-  >
-    {props.title}
-  </div>
-);
+
+    // this.state.itWasClicked = false;
+  };
+
+  render() {
+    return (
+      <div
+        className={
+          this.state.itWasClicked
+            ? `${this.props.title} highlighted row-header-cell`
+            : 'title row-header-cell'
+        }
+        onClick={this.wasClicked}
+      >
+        {this.props.title}
+      </div>
+    );
+  }
+}
 
 export default RowHeaderCell;
 
